@@ -1,0 +1,131 @@
+\thispagestyle{empty}
+\begin{title}
+    \newpage
+    {\setstretch{1.0}
+    \begin{center}
+    {\bfseries\MakeUppercase{%(input_1)s\\}}
+    \bigskip
+    %(input_2)s\\%(input_3)s\\
+    \vspace{0.5cm}
+    \end{center}}
+
+    \setlength{\columnsep}{35pt}
+    {\setstretch{1.0}
+    \begin{multicols}{2}
+    \begin{center}
+        СОГЛАСОВАНО\\ \bigskip
+        %(input_5)s
+    \end{center}
+    \hfil
+    \begin{center}
+        УТВЕРЖДАЮ\\ \bigskip
+        %(input_8)s
+    \end{center}
+    \end{multicols}
+
+    \begin{multicols}{2}
+    \begin{center}
+        \rule{3cm}{0.15mm} %(input_4)s\\
+        %(input_6)s г.
+    \end{center}
+    \hfil
+    \begin{center}
+        \rule{3cm}{0.15mm} %(input_7)s\\
+        %(input_9)s г.
+    \end{center}
+    \end{multicols}}
+
+\begin{minipage}{0.3cm}
+\begin{adjustwidth}{-3cm}{15cm}
+    \begin{adjustbox}{angle=90}
+        \begin{tabular}{ |c|c|c|c|c| }
+        \hline
+        Инв. № подл. & Подп. и дата & Взам. Инв. № & Инв. № дубл. & Подп. и дата \\
+        \hline
+        &  &  & & \\
+        \hline
+        \end{tabular}
+    \end{adjustbox}
+\end{adjustwidth}
+\end{minipage}
+\hspace{-2cm}
+\begin{minipage}{18cm}
+    \bigskip
+    \bigskip
+    \centering
+        {\bfseries\MakeUppercase{%(input_10)s}}\\
+        \bigskip
+        \bfseriesПояснительная записка\\\bigskip
+        \bfseries\MakeUppercase{ЛИСТ УТВЕРЖДЕНИЯ}\\\bigskip
+        \bfseries\MakeUppercase{%(input_11)s}
+        \bigskip
+
+    \begin{flushright}
+       \hspace{3cm} {\bfseriesИспольнитель:}\\\bigskip
+        студент группы %(input_12)s\\
+        \rule{2cm}{0.15mm}/%(input_13)s /\\
+        %(input_16)s
+        %(input_14)s г.\\
+
+    \end{flushright}
+\end{minipage}
+
+    \vspace{\fill}
+
+    \begin{center}
+        \bfseries %(input_15)s
+    \end{center}
+
+\end{title}
+\newpage
+\thispagestyle{empty}
+\newpage
+\begin{flushleft}
+\MakeUppercase{УТВЕРЖДЕН \\ %(input_11)s}
+\end{flushleft}
+\vspace{6em}
+\begin{minipage}{18cm}
+    \bigskip
+    \bigskip
+    \centering
+        {\bfseries\MakeUppercase{%(input_10)s}}\\
+        \bigskip
+        \bfseriesПояснительная записка\\\bigskip
+        \bfseries\MakeUppercase{%(input_17)s}
+\end{minipage}
+\begin{minipage}{0.3cm}
+\begin{adjustwidth}{-2cm}{15cm}
+    \begin{adjustbox}{angle=90}
+        \begin{tabular}{ |c|c|c|c|c| }
+        \hline
+        Инв. № подл. & Подп. и дата & Взам. Инв. № & Инв. № дубл. & Подп. и дата \\
+        \hline
+        &  &  & & \\
+        \hline
+        \end{tabular}
+    \end{adjustbox}
+\end{adjustwidth}
+\end{minipage}
+\hspace{-2cm}
+\vspace{\fill}
+\begin{center}
+    \bfseries %(input_15)s
+\end{center}
+\newpage
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage \\\bfseries %(input_17)s}
+\fancyfoot[C,CO,L,LO,R,RO]{}
+\fancyfoot[C]{
+\begin{tabular}{ |c|c|c|c|c| }
+    \hline
+     &  &  & & \\ [0ex]
+    \hline
+    Изм. & Лист & № докум. & Подп. & Дата \\ [0ex]
+    \hline
+    %(input_17)s &  &  & & \\ [0ex]
+    \hline
+    Инв. № подл. & Подп. и дата & Взам. Инв. № & Инв. № дубл. & Подп. и дата \\ [0ex]
+    \hline
+\end{tabular}
+}

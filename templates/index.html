@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{{ super() }}
+<form action="" method="post" class="form-contact" enctype="multipart/form-data">
+    <div class="initial_form">
+        {{ initial_form.hidden_tag() }}
+        {% for form in initial_form %}
+        {{ form }}
+        {% endfor %}
+    </div>
+    <div class="forms">
+        {% for form in test_forms %}
+        <div class="form_block">
+            <p class="form_label">{{ form.label }}
+            <p>
+                {{ form.uploaded_filename }}
+                {% for field in form if field.name not in ['csrf_token'] %}
+                {% if 'delete' not in field.name and 'upload' not in field.name and 'add_section' not in field.name and
+                'add_section_below' not in field.name and 'add_student' not in field.name %}
+            <p>{{ field.label() }}
+                {% if field.errors %}
+                {{ field(class="invalid") }}
+                <span class="invalid-feedback">
+        {% for e in field.errors %}
+        {{ e }}
+        {% endfor %}
+          </span>
+                {% else %}
+                {{ field() }}
+                {% endif %}
+                {% else %}
+            <p>{{ field() }}
+                {% endif %}
+
+                {% endfor %}
+             </div>
+            {% endfor %}
+            {% for form in forms %}
+            <p>{{ form | safe }}</p>
+
+        {% endfor %}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{{ super() }}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    function select_template(id, size, preview) {
+        $.ajax({
+            success: function (result) {
+                for (let i = 0; i < Number(size); i++) {
+                    $("#template_" + i).removeClass("pressed");
+                }
+                $("#" + id).addClass("pressed");
+                $("#pdf_template").attr('src', preview);
+
+            }
+        });
+    }
+
+    function create_report(size) {
+        $.ajax({
+            success: function (result) {
+                for (let i = 0; i < Number(size); i++) {
+                    if ($("#template_" + i).hasClass('pressed')) {
+                        window.location = "/create_report/template_" + i
+                    }
+                }
+
+            }
+        });
+    }
+
+</script>
+<div class="templates_buttons">
+    {% for i in range(list_size) %}
+    <button id="template_{{i}}"
+            onclick="select_template('template_{{i}}', '{{list_size}}', '{{ templates_list[i].content }}')">{{
+        templates_list[i].name
+        }}
+    </button>
+    {% endfor %}
+
+    <button id="next" onclick="create_report('{{list_size}}')">Далее</button>
+</div>
+<p><img id="pdf_template" height="50%" src=""/></p>
+
+{% endblock %}

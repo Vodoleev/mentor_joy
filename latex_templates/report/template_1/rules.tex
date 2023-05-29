@@ -1,0 +1,49 @@
+\documentclass[%(input_0)s, %(input_1)s]{extarticle}
+
+\usepackage[left=%(input_2)s, right=%(input_3)s, top=%(input_4)s, bottom=%(input_5)s]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{multicol}
+\usepackage{changepage}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue,bookmarks=false,hypertexnames=true, urlcolor=blue]{hyperref}
+\usepackage{indentfirst}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tablefootnote}
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\graphicspath{{graphics/}}
+\makeatletter
+\makeatother
+\setlength{\parindent}{1.25cm}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\bibref}[3]{\hyperlink{#1}{#2 (#3)}}
+\addto\captionsrussian{\def\refname{Список литературы (или источников)}}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}}
+\renewcommand{\theenumii}{.\arabic{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\theenumiii}{.\arabic{enumiii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+
+\renewcommand {\headrulewidth}{0pt}
